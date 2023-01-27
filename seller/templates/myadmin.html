@@ -1,0 +1,35 @@
+{% load static %}
+<div class="main">
+        <body>
+                <h1>admin Page</h1>
+                <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a
+            </body>
+
+        <br/>
+        <table border="1" cellpadding="10">
+        <tr>
+        <th>Name</th>
+        <th>Condition </th>
+        <th>price(in $)</th>
+        <th>description</th>
+        <th>status</th>
+    
+        </tr>
+        {% for d in dataset %}
+        <tr>
+        <td>{{d.model_name}}</td>
+        <td>{{d.condtion_car}}</td>
+        <td>{{d.asking_price}}</td>
+        <td>{{d.description}}</td>
+        <td>{{d.make_available}}</td>
+        <td><img src="{{d.upload.url}}">
+        <button type=button onClick="location.href='{% url 'myadmin' d.id %}'">make available
+        </td>
+        </tr>
+    
+
+        {% endfor %}
+        </table>
+
+</div>
+

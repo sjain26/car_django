@@ -1,0 +1,7 @@
+for shell run
+python3 manage.py shell
+
+
+Car_list.objects.all().values_list()
+
+Car_list.objects.all().order_by('manufactured_date').values

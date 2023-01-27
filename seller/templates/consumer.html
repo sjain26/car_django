@@ -1,0 +1,18 @@
+
+<body>
+    <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+  </body>
+
+    <form  action="{% url 'mail' %}" method="POST" >
+        {% csrf_token %}
+        <label for="customer">customer name:</label>
+        <input type="text" id="fn" name="customer"><br><br>
+        <label for="mobile">Mobile:</label>
+        <input type="text" id="mobile" name="mobile"><br><br>
+        <button type="submit" >payment</button>
+    </form>     
+{% if msg %}
+    <h3>{{msg}}</h3>
+{% endif %}
+
+</div>
